@@ -23,11 +23,15 @@ def home():
     """Render website's home page."""
     return render_template('home.html')
 
-
-@app.route('/about/')
+@app.route('/about.html')
 def about():
     """Render the website's about page."""
     return render_template('about.html')
+
+@app.route('/team.html')
+def team():
+    """Render the website's about page."""
+    return render_template('team.html')
 
 
 ###

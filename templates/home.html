@@ -4,6 +4,139 @@
 {% block js %}
 {% endblock %}
 
-{% block main %}
-<p> This is a test</p>
+
+{% block metaKeywords %}"computer, setup"{% endblock %}
+{% block metaDescription %}"I'm the best site ever!"{% endblock %}
+{% block title %} - United Facilities{% endblock %}
+{% block inc_script %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/static/js/bxslider.js"></script>
+    <link href="/static/css/bxslider01.css" rel="stylesheet" />
+    <link href="/static/css/default.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.bxslider').bxSlider({
+                auto: true,
+                hideControlOnEnd: false,
+                pager: false
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block main_content %}
+    <div id="site_structure">
+        <div class="container-wrapper">
+            <div id="top-wrapper">
+                <div class="active-slider">
+                    <div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;">
+                        <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 380px;">
+                            <ul class="bxslider" style="width: 415%; position: relative; -webkit-transition: 0s; transition: 0s; -webkit-transform: translate3d(-2000.00004577637px, 0px, 0px);">
+                                <li style="float: left; list-style: none; position: relative; width: 1000px;" class="bx-clone">
+                                    <img src="/static/img/business03.jpg">
+                                </li>
+                                <li style="float: left; list-style: none; position: relative; width: 1000px;">
+                                    <img src="/static/img/business01.jpg">
+                                </li>
+                                <li style="float: left; list-style: none; position: relative; width: 1000px;">
+                                    <img src="/static/img/business03.jpg">
+                                </li>
+                                <li style="float: left; list-style: none; position: relative; width: 1000px;" class="bx-clone">
+                                    <img src="/static/img/business01.jpg">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bx-controls bx-has-controls-direction">
+                            <div class="bx-controls-direction">
+                                <a class="bx-prev" href="">Prev</a>
+                                <a class="bx-next" href="">Next</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="row-one">
+        <div class="column" id="whiteBG">
+            <div class="title" id="blue"><h2>Our Team</h2></div>
+            <div id="column-content">
+            <span class="alignLeft">I'm a Paragraph. Click here to add your own text and edit me. It's easy. Just click "Edit Text" or
+            double click me and you can start adding your own content and make changes to the font.<br>
+            </span><br>
+            <span class="alignLeft">I'm a Paragraph. Click here to add your own text and edit me. It's easy. Just click "Edit Text" or
+            double click me and you can start adding your own content and make changes to the font.<br>
+            </span><br>
+            </div>
+        </div>
+        <div class="column" id="whiteBG">
+            <div class="title" id="blue"><h2>Services</h2></div>
+            <div id="column-content">
+                <span class="alignLeft">I'm a Paragraph. Click here to add your own text and edit me. It's easy. Just click "Edit Text" or
+                double click me and you can start adding your own content and make changes to the font.<br>
+                </span><br>
+                <span class="alignLeft">I'm a Paragraph. Click here to add your own text and edit me. It's easy. Just click "Edit Text" or
+                double click me and you can start adding your own content and make changes to the font.<br>
+                </span><br>
+            </div>
+        </div>
+        <div class="column-large" id="grayBG">
+            <div id="column-content">
+                <h1 style="padding-top: 15px;">Connect with Us</h1>
+                <h3>WE ARE HERE TO HELP YOU DRIVE CHANGE ?TOGETHER WE WILL SHAPE THE FUTURE.</h3>
+            </div>
+            <div id="block"></div>
+            <div id="column-content">
+                <h3>TEL:</h3>
+                <h2>(614) 216-2856</h2>
+            </div>
+            <div id="block"></div>
+            <div id="column-content">
+                <h3>EMAIL:</h3>
+
+                <h2><a id="whiteText" href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Send Mail</a></h2>
+            </div>
+        </div>
+        </div>
+        <div class="row-two"> <div class="column-double" id="whiteBG">
+            <div class="title" id="grayBG"><h2>News &amp; Publications</h2></div>
+                <div id="column-content">
+                    <div class="mainNews">
+                        <img class="thumbnail" alt="" src="/static/img/business05.jpg">
+                        <div class="article">
+                            <h3>10-25-2023</h3>
+                            <p>I'm a Article 60. Click here to add your own text and edit me. It's easy. Just click "Edit Text" or double click me and you can start adding your own content and make changes to the font. I'm a great place for you to let your users know a little more about you. If you want to delete me just click on me and press delete.</p>
+                            <div id="more"> <a href="http://127.0.1.1/alpha/article?page=63">READ MORE</a>  </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div id="column-content">
+                    <!-- Article #2 -->
+                    <div class="mainNews">
+                        <img class="thumbnail" alt="" src="/static/img/business04.jpg">
+                      <div class="article">
+                            <h3>10-25-2023</h3>
+                            <p>I'm a Article 65. Click here to add your own text and edit me. It's easy. Just click "Edit Text" or double click me and you can start adding your own content and make changes to the font. I'm a great place for you to let your users know a little more about you. If you want to delete me just click on me and press delete.</p>
+                            <div id="more"> <a href="http://127.0.1.1/alpha/article?page=63">READ MORE</a>  </div>
+                        </div></div>
+                    <br>
+                </div>
+            </div>  <div class="column-large" id="whiteBG">
+                <div class="title" id="blue"><h2>Our Expertise</h2></div>
+
+                <div id="column-content">
+                    <span class="alignLeft">
+                        <ul>
+                            <li><h2><a href="http://127.0.1.1/alpha/home#">Strategy &amp; Organization???Corporate</a></h2></li>
+                            <li><h2><a href="http://127.0.1.1/alpha/home#">Development</a></h2></li>
+                            <li><h2><a href="http://127.0.1.1/alpha/home#">Globalization</a></h2></li>
+                            <li><h2><a href="http://127.0.1.1/alpha/home#">Operations</a></h2></li>
+                        </ul>
+                    </span>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
