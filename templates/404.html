@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}Page Not Found{% endblock %}
-
-{% block css %}
-<style type="text/css">
+{% block metaKeywords %}"united facility team, partners"{% endblock %}
+{% block metaDescription %}"A Team"{% endblock %}
+{% block inc_script %}
+    <link href="/static/css/default.css" rel="stylesheet" />
+    <style type="text/css">
   body{
     padding-top: 40px;
   }
@@ -21,7 +22,7 @@
 </style>
 {% endblock %}
 
-{% block main %}
+{% block main_content %}
 <h1>404</h1>
 <p>That page doesn't even exist.</p>
 <p>Why don't you just <a href="{{ url_for('home') }}">go back home</a>?</p>

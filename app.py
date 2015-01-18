@@ -21,17 +21,26 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'this_should_be_configur
 @app.route('/')
 def home():
     """Render website's home page."""
-    return render_template('home.html')
+    title = "Home"
+    return render_template('home.html', title=title)
 
-@app.route('/about.html')
+@app.route('/about')
 def about():
+    title = "About"
     """Render the website's about page."""
-    return render_template('about.html')
+    return render_template('about.html', title=title)
 
-@app.route('/team.html')
+@app.route('/team')
 def team():
+    title = "Team"
     """Render the website's about page."""
-    return render_template('team.html')
+    return render_template('team.html', title=title)
+
+@app.route('/services')
+def services():
+    title = "Services"
+    """Render the website's about page."""
+    return render_template('services.html', title=title)
 
 
 ###
