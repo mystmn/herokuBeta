@@ -19,9 +19,13 @@
 
 <body>
 
-  <header>
-    {% include "header.html" %} {#includes header template and menu roadmap #}
-  </header>
+    <header>
+        {% if title == "" %}
+            {% include "/beta/b_header.html" %} {#includes header template and menu roadmap #}
+        {% else %}
+            {% include "/header.html" %} {#includes header template and menu roadmap #}
+        {% endif %}
+    </header>
 
 {% block main_content %}{% endblock %}
 

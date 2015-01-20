@@ -116,8 +116,9 @@ a:active {
 .site_header {
     min-height: 165px;
 }
-.header-top{
-    overflow:hidden;
+
+.header-top {
+    overflow: hidden;
     min-height: 125px;
     width: 100%;
     background-color: rgb(42, 43, 44);
@@ -162,31 +163,43 @@ a:active {
 /*************/
 /*    Menu  **
 /*************/
+
 ul {
     list-style: none;
     padding: 0px;
     margin: 0px;
 }
-ul li {display: block;position: relative;float: left;}
-li ul {display: none;}
-ul li a {
-      display: block;
-      padding: 5px 10px 5px 10px;
-      text-decoration: none;
-      white-space: nowrap;color: #fff;
-  }
-ul li a:hover {
-    background: #000000;
+
+ul li {
+    display: block;
+    position: relative;
+    float: left;
 }
-li:hover ul {display: block; position: absolute;}
-li:hover li {float: none;}
-li:hover a {background: #000000;}
-li:hover li a:hover {background: #000;}
+
+li ul {
+    display: none;
+}
+
+ul li a {
+    display: block;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+}
+
+ul li a:hover {
+}
+
+
+li:hover li {
+    float: none;
+}
+
 #drop-nav li ul li {
     border-top: 0px;
     font-size: 15px;
 }
-.menu-drop{
+
+.menu-drop {
     padding: 15 0 0 15;
     font-size: 22px;
 }
@@ -485,7 +498,7 @@ li:hover li a:hover {background: #000;}
 }
 
 /*********************************/
-/*      Requested Page :: Index **                                                                    */
+/*      Requested Page :: Index **/
 /*********************************/
 .mainNews {
     width: 575px;
@@ -517,7 +530,7 @@ li:hover li a:hover {background: #000;}
 }
 
 /**************************************/
-/*      Requested Feature :: JQuery  **                                                                    */
+/*      Requested Feature :: JQuery  **/
 /**************************************/
 
 #top-wrapper {
@@ -532,7 +545,7 @@ li:hover li a:hover {background: #000;}
 }
 
 /**************************************/
-/*      Requested Display :: block  **                                                                    */
+/*      Requested Display :: block  ***/
 /**************************************/
 #block {
     display: inline-block;
@@ -547,4 +560,69 @@ li:hover li a:hover {background: #000;}
     float: left;
     margin-left: 30%;
     min-width: 10%;
+}
+
+/************************************/
+/*      Requested Page :: Services **/
+/************************************/
+
+#entry-title {
+    display: block;
+    border-bottom: 1px solid #E8E8E8;
+    float: right;
+    font-family: mont;
+    font-size: 40px;
+    margin-bottom: 28px;
+    padding: 0 0 25px 0;
+    width: 60%;
+}
+
+.column_one {
+    background-color: ;
+    width: 40%;
+    float: left;
+}
+.column_one ul li {
+    font-size: 14px;
+    line-height: 23px;
+    list-style: disc outside none;
+    width: 70%%;
+}
+
+#border li {
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.column_two {
+    background-color:;
+    float: right;
+    width: 60%;
+    padding-top: 20px;
+}
+
+.column_two img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+
+}
+
+.column_two p {
+    margin-bottom: 31px;
+    width: 90%;
+    font-size: 14px;
+    padding: 10px 20px 0px 0px;
+    float: right;
+}
+
+.column_two ul {
+    margin-left: 10%;
+    margin-bottom: 31px;
+}
+
+.column_two ul li {
+    font-size: 14px;
+    line-height: 23px;
+    list-style: disc outside none;
+    width: 90%;
 }
