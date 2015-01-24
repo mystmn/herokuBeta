@@ -42,6 +42,12 @@ def services():
     """Render the website's about page."""
     return render_template('services.html', title=title)
 
+@app.route('/test')
+def test():
+    title = "BETA"
+    """Render the website's about page."""
+    return redirect(url_for('home'))
+
 
 ###
 # The functions below should be applicable to all Flask apps.
