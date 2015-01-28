@@ -224,15 +224,15 @@ li:hover li {
 .logo-pic {
     float: left;
     padding-top: 10px;
+    height: 70px;
     width: 100%;
     display: inline-block;
-    background-color: #;
 }
 
 .logo-pic img {
     padding-left: 5%;
     width: auto;
-    height: 90px;
+    height: 150px;
     padding-left: 5%;
 }
 
