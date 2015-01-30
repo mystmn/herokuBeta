@@ -224,7 +224,7 @@ li:hover li {
 .logo-pic {
     float: left;
     padding-top: 10px;
-    height: 70px;
+    height: 105px;
     width: 100%;
     display: inline-block;
 }
@@ -232,7 +232,7 @@ li:hover li {
 .logo-pic img {
     padding-left: 5%;
     width: auto;
-    height: 150px;
+    height: 105px;
     padding-left: 5%;
 }
 
