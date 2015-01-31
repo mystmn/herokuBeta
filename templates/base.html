@@ -19,14 +19,14 @@
 
 <body>
 
-    <header>
-        {% include "/header.html" %} {#includes header template and menu roadmap #}
-    </header>
-<div id="site_structure">
+<header>
+    {% include "/header.html" %} {#includes header template and menu roadmap #}
+</header>
+<div class="container" id="site_structure">
     {% block main_content %}{% endblock %}
 </div>
   <footer>
-    {% include "footer.html" %}
+{% include "footer.html" %}
   </footer>
 
   <!-- Additional JavaScript libraries and plugins... -->
