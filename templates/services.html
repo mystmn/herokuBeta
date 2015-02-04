@@ -4,6 +4,33 @@
 {% block metaDescription %}"A Team"{% endblock %}
 {% block inc_script %}
     <link href="/static/css/default.css" rel="stylesheet" />
+     <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      <script>
+         $(function() {
+            $( "#accordion-2" ).accordion({
+                heightStyle: "content"
+            });
+         });
+      </script>
+      <style>
+         #accordion-2{
+            font-size: 14px;
+         }
+        .ui-widget-content {
+            border: 1px solid #dddddd;
+            background-color: seashell;
+            background: none;
+            color: #2980B9;
+        }
+        .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active{
+            border: 1px solid #red;
+            background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
+            font-weight: bold;
+            color: rgb(168, 205, 255);
+        }
+      </style>
 {% endblock %}
 
 {% block main_content %}
@@ -11,8 +38,7 @@
     <a href="http://www.magnoliaplumbing.com/commercial/" rel="bookmark">{{title}}</a>
 </h1>
 
-<div class="column_one">
-
+<div class="column_one" style="float:left">
     <ul id="sl1">
         <li>
             <a href="http://www.magnoliaplumbing.com/schedule">
@@ -28,31 +54,74 @@
         </li>
 
     </ul>
-
-
-    <ul id="border">
-        <li><a href="http://www.magnoliaplumbing.com/plumbing"><img
-                src="http://www.magnoliaplumbing.com/wp-content/themes/Magnolia/images/sidebar-plumbing.jpg"></a>
-        </li>
-
-        <li><a href="http://www.magnoliaplumbing.com/heating"><img
-                src="http://www.magnoliaplumbing.com/wp-content/themes/Magnolia/images/sidebar-heating.jpg"></a>
-        </li>
-
-        <li><a href="http://www.magnoliaplumbing.com/cooling"><img
-                src="http://www.magnoliaplumbing.com/wp-content/themes/Magnolia/images/sidebar-cooling.jpg"></a>
-        </li>
-
-        <li><a href="http://www.magnoliaplumbing.com/new-construction"><img
-                src="http://www.magnoliaplumbing.com/wp-content/themes/Magnolia/images/sidebar-newconstruction.jpg"></a>
-        </li>
-
-        <li><a href="http://www.magnoliaplumbing.com/indoor-air-quality"><img
-                src="http://www.magnoliaplumbing.com/wp-content/themes/Magnolia/images/sidebar-indoor.jpg"></a>
-        </li>
-
-    </ul>
+    <div id="accordion-2" style="float:left; width: 300px; padding-left:15px;">
+        <h3><li><img src="http://www.magnoliaplumbing.com/wp-content/themes/Magnolia/images/sidebar-plumbing.jpg"></a></li></h3>
+            <div>
+                <li>Plumbing Repairs</li>
+                <li>Leaks</li>
+                <li>Drain cleaning</li>
+                <li>Emergency Services</li>
+            </div>
+        <h3><li><img src="http://www.site-fusion.co.uk/files/writeable/uploads/webfusion76704/image/banner_building_maintenance.jpg" style="width:190px; height:47px"></a></li></h3>
+            <div>
+                <li>Handyman work</li>
+                <li>Ceiling Repairs</li>
+                <li>Lack and Door Repairs</li>
+                <li>Painting</li>
+                <li>Pest Control</li>
+                <li>Pressure Washing</li>
+                <li>Roofing</li>
+                <li>Security Services</li>
+                <li>Snow and Ice Removal</li>
+                <li>IT Services</li>
+                <li>Carpentry Services</li>
+                <li>Fire Extinguisher Services</li>
+                <li>Glass and Window Repair</li>
+                <li>Ceiling Tile Replacement</li>
+            </div>
+        <h3><li><img src="http://www.janitoraz.com/images/slideshow/commercial-cleaning.png"style="width:190px; height:47px"></a></li></h3>
+            <div>
+                <li>Blind Cleaning</li>
+                <li>Carpet Care</li>
+                <li>Construction Clean up</li>
+                <li>Emergency Services</li>
+                <li>Food Service sanitation</li>
+                <li>Green cleaning</li>
+                <li>Hard surface floor care</li>
+                <li>Pressure washing</li>
+                <li>Restroom sanitation</li>
+                <li>Special event services</li>
+                <li>Upholstery cleaning</li>
+                <li>Window cleaning</li>
+            </div>
+          <h3><li><img src="http://www.bertrandelectricvt.com/images/electrical_services.jpg" style="width:190px; height:47px"></a></li></h3>
+            <div>
+                <li>Diagnosis, Repairs and Maintenance</li>
+                <li>Installation and Updates</li>
+                <li>Energy Savings</li>
+                <li>Specialty lighting</li>
+                <li>Electrical Panel Upgrades</li>
+                <li>Ballast and Bulb Replacement</li>
+            </div>
+            <h3><li><img src="http://www.aircomfortid.com/images/hvac-logo.png" style="width:190px; height:47px"></a></li></h3>
+            <div>
+                <li>Repair and Maintenance</li>
+            </div>
+          <h3><li><img src="http://images.clipartpanda.com/landscaping-clipart-landscaping_thumb.png" style="width:190px; height:47px"></a></li></h3>
+            <div>
+                <li>Professional Landscape Work</li>
+                <li>Landscape Maintenance</li>
+            </div>
+            <h3><li>Restoration Services</li></h3>
+            <div>
+                <li>Fire, Smoke & Soot</li>
+                <li>Water Removal </li>
+                <li>Dehumidification</li>
+                <li>Mold Mitigation and Remediation</li>
+            </div>
+    </div>
 </div>
+
 <div class="column_two">
     <img class="set" src="http://www.magnoliaplumbing.com/wp-content/uploads/2013/10/Highvan_commercial-Building_crop.jpg">
     <p>For over 50 years, Magnolia Plumbing, Heating and Cooling has been offering quality and value-driven commercial
