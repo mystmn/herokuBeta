@@ -44,10 +44,10 @@
 }
 
 #line-item {
-    width: 85%;
-    padding: 5px;
+    width: 100%;
+    padding-bottom: 5px;
     list-style: none;
     vertical-align:baseline;
-    text-align: center;
+    text-align: left;
 }
 
