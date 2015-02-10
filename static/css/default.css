@@ -244,26 +244,26 @@ header{
 }
 
 .row-two {
-    height: 400px;
+    height: 200px;
 }
 
 .column, .column-double, .column-large {
     float: left;
-    height: 100%;
     overflow: hidden;
 }
 
 .column {
     margin: 2px 8px 2px 8px;
-    width: 292px;
+    width: 600px;
 }
 
 .column-double {
     margin: 2px 8px 2px 8px;
-    width: 600px;
+    width: 970px;
 }
 
 .column-large {
+    height: 90%;
     width: 360px;
     margin: 2px 0 2px 0;
 }
@@ -502,11 +502,12 @@ header{
 /**************************************/
 
 .active-slider {
-    background-color: wheat;
-    margin: 15px 0 0 0;
+    background-color: #;
     width: 100%;
-    padding: 5px;
     height: auto;
+    -webkit-box-shadow: -6px 0 white, 50px 0 white, 0 6px 4px -2px black;
+    -moz-box-shadow: -6px 0 white, 50px 0 white, 0 6px 4px -2px black;
+    box-shadow: -6px 0 white, 50px 0 white, 0 6px 4px -2px black;
 }
 
 /**************************************/
@@ -590,32 +591,12 @@ header{
     width: 500px;
 }
 
-.mainNews {
-    width: 575px;
-    height: 175px;
-}
-
 .thumbnail {
     margin-top: 0px;
-    margin-left: 0px;
+    margin-left: 70px;
     width: 134px;
     height: 136px;
     float: left;
-}
-
-.mainNews .article {
-    float: right;
-    width: 410px;
-}
-
-.mainNews h4 {
-    color: orange;
-    width: 100%;
-}
-
-#more {
-    margin-left: 0px;
-    line-height: 29px;
 }
 
 /***************/
