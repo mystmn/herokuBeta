@@ -219,14 +219,6 @@ header{
     font-size: 15px;
 }
 
-/*********************************************************************************/
-/* Container-Wrapper, Slider, and Content                                        */
-/*********************************************************************************/
-.active-slider {
-    height: 50%
-
-}
-
 /**********************************/
 /*      Requested Page :: index  **
 /*      1st Row w/ 3 columns     **
@@ -271,6 +263,7 @@ header{
 #column-content {
     padding: 0px 7px 0px 7px;
     float: left;
+    width: 100%;
 }
 
 #column-content h1, #column-content h2 {
@@ -463,12 +456,6 @@ header{
 /*********************************/
 /*      Requested Page :: About **/
 /*********************************/
-.article1{
-    width: 400px;
-    float: right;
-
-
-}
 .article{
     color: whitesmoke;
     /** background-color: #FFC299; **/
@@ -494,7 +481,7 @@ header{
     border-bottom-left-radius: 75px;
     border-left: 1px solid #000;
     padding: 20px 0 25px 20px;
-    margin-top: 120px;
+    margin-top: 90px;
 }
 
 /**************************************/
@@ -502,12 +489,8 @@ header{
 /**************************************/
 
 .active-slider {
-    background-color: #;
     width: 100%;
-    height: auto;
-    -webkit-box-shadow: -6px 0 white, 50px 0 white, 0 6px 4px -2px black;
-    -moz-box-shadow: -6px 0 white, 50px 0 white, 0 6px 4px -2px black;
-    box-shadow: -6px 0 white, 50px 0 white, 0 6px 4px -2px black;
+    height: 50%
 }
 
 /**************************************/
@@ -592,11 +575,20 @@ header{
 }
 
 .thumbnail {
-    margin-top: 0px;
-    margin-left: 70px;
-    width: 134px;
-    height: 136px;
+    width: 180px;
+    height: 120px;
     float: left;
+    border-radius: 10px;
+}
+.about-thumbnail{
+    width: 140px;
+    height: 75px;
+    float: left;
+    border-radius: 10px;
+}
+#center-image{
+    margin-top: 0px;
+    margin-left: 5%;
 }
 
 /***************/
@@ -609,7 +601,7 @@ footer {
     border-top: 0px solid rgb(42, 43, 44);
     border-bottom: 0px solid rgb(42, 43, 44);
     height: 70px;
-    margin-top: 75px;
+    margin-top: 20px;
     bottom: 0;
 }
 
