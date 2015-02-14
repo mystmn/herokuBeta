@@ -624,3 +624,18 @@ footer span {
     border-radius: 0px 0px 5px 5px;
     text-align: center;
 }
+
+/************************/
+/*    Message Flashing **
+/************************/
+.flash {
+  background-color: #FBB0B0;
+  padding: 10px;
+  width: 400px;
+}
+
+.alert-error{
+  background-color: #FBB0B0;
+  padding: 10px;
+  width: 400px;
+}

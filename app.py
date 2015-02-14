@@ -7,12 +7,19 @@ This file creates your application.
 """
 
 import os
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
+from flask_wtf import Form
+from wtforms import StringField, validators
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'this_should_be_configured')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'x6dgbjldprk3lm52')
 
+class MyForm(Form):
+    name = StringField("Name", [validators.Required("Please Enter your name")])
+    email = StringField("Email", [validators.Required("Please Enter your email"), validators.Email("Emails not valid")])
+    subject = StringField("Subject", [validators.Required("Please Enter a Subject")])
+    message = StringField("Message", [validators.Required("Please Enter Message")])
 
 ###
 # Routing for your application.
@@ -42,12 +49,20 @@ def services():
     """Render the website's about page."""
     return render_template('services.html', title=title)
 
-@app.route('/test')
-def test():
-    title = "BETA"
-    """Render the website's about page."""
-    return redirect(url_for('home'))
+@app.route('/contact', methods=('GET', 'POST'))
+def contact():
+    form = MyForm()
+    title = "Contact Us"
+    if request.method == 'POST':
+        if form.validate() == False:
+            flash('Error')
+            return render_template('contact.html', form=form, title=title)
+        else:
+            flash('Form has been submitted')
+            return render_template('contact.html', form=form, title=title)
 
+    elif request.method == 'GET':
+        return render_template('contact.html', form=form, title=title)
 
 ###
 # The functions below should be applicable to all Flask apps.
