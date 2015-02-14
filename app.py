@@ -10,6 +10,8 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_wtf import Form
 from wtforms import StringField, validators
+from flask.ext.mail import Message, Mail
+mail = Mail()
 
 app = Flask(__name__)
 
@@ -20,6 +22,14 @@ class MyForm(Form):
     email = StringField("Email", [validators.Required("Please Enter your email"), validators.Email("Emails not valid")])
     subject = StringField("Subject", [validators.Required("Please Enter a Subject")])
     message = StringField("Message", [validators.Required("Please Enter Message")])
+
+app.config["MAIL_SERVER"] = "smtp.gmail.com"
+app.config["MAIL_PORT"] = 465
+app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_USERNAME"] = 'contact@example.com'
+app.config["MAIL_PASSWORD"] = 'your-password'
+
+mail.init_app(app)
 
 ###
 # Routing for your application.
