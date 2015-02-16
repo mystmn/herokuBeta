@@ -57,7 +57,7 @@ p {
 }
 
 #headline{
-    color: #333;
+    color: rgb(84, 86, 88);
     margin: 1em 0 1em 0;
     font-family: brandon-grotesque,brandon-grotesque-1,brandon-grotesque-2,HelveticaNeue,Helvetica-Neue,Helvetica,Arial,sans-serif;
     font-size: 32px;
@@ -205,7 +205,7 @@ header{
 }
 
 .logo-pic {
-    padding: 10px 0 0 75px;
+    padding: 10px 0 0 5px;
     float: left;
     height: 105px;
     width: 100%;
@@ -518,14 +518,11 @@ header{
 /************************************/
 
 #entry-title {
-    display: block;
-    border-bottom: 1px solid #E8E8E8;
-    float: right;
+    float: left;
     font-family: mont;
     font-size: 40px;
-    margin-bottom: 28px;
-    padding: 0 0 25px 0;
-    width: 600px
+    margin-bottom: 20px;
+    color: rgb(84, 86, 88)
 }
 
 .column_one {
@@ -552,8 +549,8 @@ header{
 .column_two img {
     display: block;
     margin-left: auto;
-    margin-right: auto
-
+    margin-right: auto;
+    border-radius: 30px;
 }
 
 .column_two p {
