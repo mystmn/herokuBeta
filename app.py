@@ -43,7 +43,7 @@ def home():
 
 @app.route('/about')
 def about():
-    title = "About"
+    title = "What We Do"
     """Render the website's about page."""
     return render_template('about.html', title=title)
 

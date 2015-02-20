@@ -16,7 +16,7 @@ body {
 #site_structure {
     margin-top: 15px;
     padding-bottom: 0px;
-    min-height: 710px;
+    min-height: 610px;
     height: auto;
     overflow: hidden;
 }
@@ -116,6 +116,7 @@ a:active {
 /**************************/
 .container{
     width: 1000px;
+    height: auto;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -126,7 +127,7 @@ a:active {
 
 .top-menu{
     float: right;
-    padding-right: 15%;
+    position: absolute; bottom: 0; left: 500px;
 }
 
 .menu-drop {
@@ -199,21 +200,24 @@ header{
     box-shadow: rgba(0, 0, 0, 0.701961) 0px 0px 5px 0px;
     border-top: 0px solid rgb(42, 43, 44);
     border-bottom: 0px solid rgb(42, 43, 44);
-    min-height: 160px;
+    min-height: 140px;
     width: 1200px;
     margin: auto; 0px;
+    position: relative;
 }
 
 .logo-pic {
     padding: 10px 0 0 5px;
     float: left;
-    height: 105px;
-    width: 100%;
+    width: 350px;
 }
 
 .logo-pic img {
     width: auto;
+    padding-bottom: 10px;
     height: 105px;
+    position: absolute; bottom: 0;
+
 }
 
 #drop-nav li ul li {
@@ -461,7 +465,7 @@ header{
 .article{
     color: whitesmoke;
     /** background-color: #FFC299; **/
-    float: left;
+    float: right;
     width: 650px;
     height: auto;
     padding: 0 10px 0 10px;
@@ -473,17 +477,11 @@ header{
     width: auto;
 }
 
-.sideContent{
-    display: block;
-    float: right;
-    color: blue;
-    /** background-color: #F6D1FF ;**/
-    width: 280px;
-    border-bottom: 1px solid #000;
-    border-bottom-left-radius: 75px;
-    border-left: 1px solid #000;
-    padding: 20px 0 25px 20px;
-    margin-top: 90px;
+.sidecontent{
+    margin-top: 75px;
+    height: 300px;
+    width: 300px;
+    float: left;
 }
 
 /**************************************/
