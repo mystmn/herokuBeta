@@ -12,7 +12,6 @@ from flask_wtf import Form
 from wtforms import StringField, validators, TextAreaField
 from flask.ext.mail import Message, Mail
 mail = Mail()
-
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'x6dgbjldprk3lm52')
@@ -24,7 +23,8 @@ class MyForm(Form):
     message = TextAreaField("Message", [validators.Required("Please Enter Message")])
 
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
-app.config["MAIL_PORT"] = 587
+app.config["MAIL_PORT"] = 465
+app.config["MAIL_USE_TLS"] = False
 app.config["MAIL_USE_SSL"] = True
 app.config["MAIL_USERNAME"] = 'ufr.server@gmail.com'
 app.config["MAIL_PASSWORD"] = '/pepper62'
@@ -68,8 +68,10 @@ def contact():
         if form.validate() == False:
             return render_template('contact.html', form=form, title=title)
         else:
+            #msg = Message(form.subject.data, sender='ufr.server@gmail.com', recipients=['ultimatefrezbe@gmail.com'])
             msg = Message(form.subject.data, sender='ufr.server@gmail.com', recipients=['ultimatefrezbe@gmail.com'])
-            msg.body = "From: %s %s; Message: %s"% (form.name.data, form.email.data, form.message.data)
+            msg.html = "<b>HTML</b> body"
+            #msg.body = "From: %s %s; Message: %s"% (form.name.data, form.email.data, form.message.data)
             mail.send(msg)
 
             return render_template('contact.html', form=form, title=title, posted_redirect=True)
