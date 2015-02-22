@@ -459,16 +459,22 @@ header{
     box-shadow: 3px 3px 5px 6px #ccc;
 }
 
-/*********************************/
-/*      Requested Page :: About **/
-/*********************************/
-.article{
-    color: whitesmoke;
-    /** background-color: #FFC299; **/
-    float: right;
-    width: 650px;
+/**************************************/
+/*      Requested Page :: Who We Are **/
+/**************************************/
+.article-what, .article-who{
     height: auto;
     padding: 0 10px 0 10px;
+    color: whitesmoke;
+}
+.article-who{
+    width: 850px;
+    margin: auto; 0px;
+}
+
+.article-what{
+    float: right;
+    width: 650px;
 }
 
 .article-title{

@@ -9,7 +9,7 @@ This file creates your application.
 import os
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_wtf import Form
-from wtforms import StringField, validators
+from wtforms import StringField, validators, TextAreaField
 from flask.ext.mail import Message, Mail
 mail = Mail()
 
@@ -21,13 +21,13 @@ class MyForm(Form):
     name = StringField("Name", [validators.Required("Please Enter your name")])
     email = StringField("Email", [validators.Required("Please Enter your email"), validators.Email("Emails not valid")])
     subject = StringField("Subject", [validators.Required("Please Enter a Subject")])
-    message = StringField("Message", [validators.Required("Please Enter Message")])
+    message = TextAreaField("Message", [validators.Required("Please Enter Message")])
 
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 465
 app.config["MAIL_USE_SSL"] = True
-app.config["MAIL_USERNAME"] = 'contact@example.com'
-app.config["MAIL_PASSWORD"] = 'your-password'
+app.config["MAIL_USERNAME"] = 'ufr.server@gmail.com'
+app.config["MAIL_PASSWORD"] = '/pepper62'
 
 mail.init_app(app)
 
@@ -47,11 +47,11 @@ def about():
     """Render the website's about page."""
     return render_template('about.html', title=title)
 
-@app.route('/team')
+@app.route('/who-are-we')
 def team():
-    title = "Team"
+    title = "Who We Are"
     """Render the website's about page."""
-    return render_template('team.html', title=title)
+    return render_template('who.html', title=title)
 
 @app.route('/services')
 def services():
@@ -63,13 +63,21 @@ def services():
 def contact():
     form = MyForm()
     title = "Contact Us"
+
     if request.method == 'POST':
         if form.validate() == False:
-            flash('Error')
             return render_template('contact.html', form=form, title=title)
         else:
-            flash('Form has been submitted')
-            return render_template('contact.html', form=form, title=title)
+            msg = Message(form.subject.data, sender='ufr.server@gmail.com', recipients=['ojhinton@gmail.co'])
+            msg.body = """
+            From: %s %s;
+
+            Message:
+            %s
+            """ % (form.name.data, form.email.data, form.message.data)
+            mail.send(msg)
+
+            return render_template('contact.html', form=form, title=title, posted_redirect=True)
 
     elif request.method == 'GET':
         return render_template('contact.html', form=form, title=title)

@@ -9,42 +9,50 @@
 {% endblock %}
 
 {% block main_content %}
-  <h2>Contact</h2>
+    <div class="article-title" id="headline"><b>Contact</b></div>
+    {% if posted_redirect %}
+        <h1 style="color: blue;">Thank you for your message. We'll get back to you shortly.</h1>
+        <p>...Redirecting in 5 seconds</p>
+        <meta http-equiv='refresh' content='5;/contact'/>
+    {% endif%}
 
-  {% for message in form.name.errors %}
-    <div class="flash">{{ message }}</div>
-  {% endfor %}
+<div style="float: left;">
+        {% for message in form.name.errors %}
+        <div class="flash">{{ message }}</div>
+        {% endfor %}
 
-  {% for message in form.email.errors %}
-    <div class="flash">{{ message }}</div>
-  {% endfor %}
+        {% for message in form.email.errors %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
 
-  {% for message in form.subject.errors %}
-    <div class="flash">{{ message }}</div>
-  {% endfor %}
+        {% for message in form.subject.errors %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
 
-  {% for message in form.message.errors %}
-    <div class="flash">{{ message }}</div>
-  {% endfor %}
+        {% for message in form.message.errors %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
 
-  <form action="{{ url_for('contact') }}" method=post>
-    {{ form.hidden_tag() }}
+    <form action="{{ url_for('contact') }}" method=post>
+        {{ form.hidden_tag() }}
 
-    {{ form.name.label }}
-    {{ form.name }}
+        {{ form.name.label }}
+        {{ form.name }}
 
-    {{ form.email.label }}
-    {{ form.email }}
+        {{ form.email.label }}
+        {{ form.email }}
 
-    {{ form.subject.label }}
-    {{ form.subject }}
+        {{ form.subject.label }}
+        {{ form.subject }}
 
-    {{ form.message.label }}
-    {{ form.message }}
+        {{ form.message.label }}
+        {{ form.message }}
 
-    {{ form.submit }}
-    <input type=submit value="Post">
+        {{ form.submit }}
+        <input type=submit id="submit" value="Post">
+    </form>
+</div>
+  <!-- <a href="http://code.tutsplus.com/tutorials/intro-to-flask-adding-a-contact-page--net-28982" target="_blank"">Code needed</a> -->
 
-  </form>
-  <a href="http://code.tutsplus.com/tutorials/intro-to-flask-adding-a-contact-page--net-28982" target="_blank"">Code needed</a>
+    <div style="width: 300px; height:200px; background-color: black; float: right; color: white;">Add a picture</div>
 {% endblock %}
