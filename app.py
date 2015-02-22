@@ -11,10 +11,10 @@ import sendgrid # Used for sending emails from heroku add on
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_wtf import Form
 from wtforms import StringField, validators, TextAreaField
-from flask.ext.mail import Message, Mail
-sg = sendgrid.SendGridClient('YOUR_SENDGRID_USERNAME', 'YOUR_SENDGRID_PASSWORD')
+#from flask.ext.mail import Message, Mail
+sg = sendgrid.SendGridClient('pcameron5', '/pepper62')
 
-mail = Mail()
+#mail = Mail()
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'x6dgbjldprk3lm52')
@@ -24,7 +24,7 @@ class MyForm(Form):
     email = StringField("Email", [validators.Required("Please Enter your email"), validators.Email("Emails not valid")])
     subject = StringField("Subject", [validators.Required("Please Enter a Subject")])
     message = TextAreaField("Message", [validators.Required("Please Enter Message")])
-
+'''
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 587
 app.config["MAIL_USE_TLS"] = True
@@ -33,7 +33,7 @@ app.config["MAIL_USERNAME"] = 'ufr.server@gmail.com'
 app.config["MAIL_PASSWORD"] = '/pepper62'
 
 mail.init_app(app)
-
+'''
 ###
 # Routing for your application.
 ###
@@ -71,12 +71,14 @@ def contact():
         if form.validate() == False:
             return render_template('contact.html', form=form, title=title)
         else:
+            message = sendgrid.Mail(to='ufr.server@gmail.com', subject='Example', html='Body', text='Body', from_email='doe@email.com')
+            '''
             #msg = Message(form.subject.data, sender='ufr.server@gmail.com', recipients=['ultimatefrezbe@gmail.com'])
             msg = Message(form.subject.data, sender='ufr.server@gmail.com', recipients=['ultimatefrezbe@gmail.com'])
             msg.html = "<b>HTML</b> body"
             #msg.body = "From: %s %s; Message: %s"% (form.name.data, form.email.data, form.message.data)
             mail.send(msg)
-
+            '''
             return render_template('contact.html', form=form, title=title, posted_redirect=True)
 
     elif request.method == 'GET':
