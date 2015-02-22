@@ -7,10 +7,13 @@ This file creates your application.
 """
 
 import os
+import sendgrid # Used for sending emails from heroku add on
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_wtf import Form
 from wtforms import StringField, validators, TextAreaField
 from flask.ext.mail import Message, Mail
+sg = sendgrid.SendGridClient('YOUR_SENDGRID_USERNAME', 'YOUR_SENDGRID_PASSWORD')
+
 mail = Mail()
 app = Flask(__name__)
 
@@ -23,9 +26,9 @@ class MyForm(Form):
     message = TextAreaField("Message", [validators.Required("Please Enter Message")])
 
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
-app.config["MAIL_PORT"] = 465
-app.config["MAIL_USE_TLS"] = False
-app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_PORT"] = 587
+app.config["MAIL_USE_TLS"] = True
+app.config["MAIL_USE_SSL"] = False
 app.config["MAIL_USERNAME"] = 'ufr.server@gmail.com'
 app.config["MAIL_PASSWORD"] = '/pepper62'
 
