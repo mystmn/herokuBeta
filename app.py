@@ -24,7 +24,7 @@ class MyForm(Form):
     message = TextAreaField("Message", [validators.Required("Please Enter Message")])
 
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
-app.config["MAIL_PORT"] = 465
+app.config["MAIL_PORT"] = 587
 app.config["MAIL_USE_SSL"] = True
 app.config["MAIL_USERNAME"] = 'ufr.server@gmail.com'
 app.config["MAIL_PASSWORD"] = '/pepper62'
@@ -69,7 +69,7 @@ def contact():
             return render_template('contact.html', form=form, title=title)
         else:
             msg = Message(form.subject.data, sender='ufr.server@gmail.com', recipients=['ultimatefrezbe@gmail.com'])
-            msg.body = "From: %s %s; Message: %s" % (form.name.data, form.email.data, form.message.data)
+            msg.body = "From: %s %s; Message: %s"% (form.name.data, form.email.data, form.message.data)
             mail.send(msg)
 
             return render_template('contact.html', form=form, title=title, posted_redirect=True)
