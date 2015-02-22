@@ -41,11 +41,11 @@ def home():
     title = "Home"
     return render_template('home.html', title=title)
 
-@app.route('/about')
+@app.route('/what-we-do')
 def about():
     title = "What We Do"
     """Render the website's about page."""
-    return render_template('about.html', title=title)
+    return render_template('what.html', title=title)
 
 @app.route('/who-are-we')
 def team():
