@@ -68,7 +68,7 @@ def contact():
         if form.validate() == False:
             return render_template('contact.html', form=form, title=title)
         else:
-            msg = Message(form.subject.data, sender='ufr.server@gmail.com', recipients=['ojhinton@gmail.co'])
+            msg = Message(form.subject.data, sender='ufr.server@gmail.com', recipients=['ultimatefrezbe@gmail.com'])
             msg.body = """
             From: %s %s;
 
