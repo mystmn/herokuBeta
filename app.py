@@ -11,7 +11,11 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_wtf import Form
 from wtforms import StringField, validators, TextAreaField
 #from flask_debugtoolbar import DebugToolbarExtension
-from flask.ext.mail import Message, Mail
+
+''' Add-On for Heroku email sending API '''
+import sendgrid
+sg = sendgrid.SendGridClient('pcameron5', 'send.pepper62')
+
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'x6dgbjldprk3lm52')
@@ -62,6 +66,13 @@ def contact():
         if form.validate() == False:
             return render_template('contact.html', form=form, title=title)
         else:
+            message = sendgrid.Mail()
+            message.add_to("ufr.server@gmail.com")
+            message.set_from("ufr.server@gmail.com")
+            message.set_subject("Sending with SendGrid is Fun")
+            mes_con = "This is from : %s with an email of %s" % (form.name, form.email)
+            message.set_html(mes_con)
+            sg.send(message)
 
             return render_template('contact.html', form=form, title=title, posted_redirect=True)
 
