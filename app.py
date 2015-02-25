@@ -10,15 +10,15 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_wtf import Form
 from wtforms import StringField, validators, TextAreaField
-from flask_debugtoolbar import DebugToolbarExtension
+#from flask_debugtoolbar import DebugToolbarExtension
 from flask.ext.mail import Message, Mail
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'x6dgbjldprk3lm52')
 
 ''' Change to False when Environment goes to Production'''
-app.debug = False
-toolbar = DebugToolbarExtension(app)
+#app.debug = False
+#toolbar = DebugToolbarExtension(app)
 
 class MyForm(Form):
     name = StringField("Name", [validators.Required("Please Enter your name")])
@@ -87,9 +87,9 @@ def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
 
-@app.errorhandler(500)
-def internal_error(error):
-    return render_template('500.html'), 500
+#@app.errorhandler(500)
+#def internal_error(error):
+#    return render_template('500.html'), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
