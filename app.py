@@ -7,33 +7,25 @@ This file creates your application.
 """
 
 import os
-import sendgrid # Used for sending emails from heroku add on
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_wtf import Form
 from wtforms import StringField, validators, TextAreaField
-#from flask.ext.mail import Message, Mail
-sg = sendgrid.SendGridClient('pcameron5', '/pepper62')
-
-#mail = Mail()
+from flask.ext.mail import Message, Mail
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'x6dgbjldprk3lm52')
+
+''' Change to False when Environment goes to Production'''
+from flask_debugtoolbar import DebugToolbarExtension
+app.debug = False
+toolbar = DebugToolbarExtension(app)
 
 class MyForm(Form):
     name = StringField("Name", [validators.Required("Please Enter your name")])
     email = StringField("Email", [validators.Required("Please Enter your email"), validators.Email("Emails not valid")])
     subject = StringField("Subject", [validators.Required("Please Enter a Subject")])
     message = TextAreaField("Message", [validators.Required("Please Enter Message")])
-'''
-app.config["MAIL_SERVER"] = "smtp.gmail.com"
-app.config["MAIL_PORT"] = 587
-app.config["MAIL_USE_TLS"] = True
-app.config["MAIL_USE_SSL"] = False
-app.config["MAIL_USERNAME"] = 'ufr.server@gmail.com'
-app.config["MAIL_PASSWORD"] = '/pepper62'
 
-mail.init_app(app)
-'''
 ###
 # Routing for your application.
 ###
@@ -66,19 +58,11 @@ def services():
 def contact():
     form = MyForm()
     title = "Contact Us"
-
     if request.method == 'POST':
         if form.validate() == False:
             return render_template('contact.html', form=form, title=title)
         else:
-            message = sendgrid.Mail(to='ufr.server@gmail.com', subject='Example', html='Body', text='Body', from_email='doe@email.com')
-            '''
-            #msg = Message(form.subject.data, sender='ufr.server@gmail.com', recipients=['ultimatefrezbe@gmail.com'])
-            msg = Message(form.subject.data, sender='ufr.server@gmail.com', recipients=['ultimatefrezbe@gmail.com'])
-            msg.html = "<b>HTML</b> body"
-            #msg.body = "From: %s %s; Message: %s"% (form.name.data, form.email.data, form.message.data)
-            mail.send(msg)
-            '''
+
             return render_template('contact.html', form=form, title=title, posted_redirect=True)
 
     elif request.method == 'GET':
@@ -87,14 +71,6 @@ def contact():
 ###
 # The functions below should be applicable to all Flask apps.
 ###
-
-@app.route('/<file_name>.txt')
-def send_text_file(file_name):
-    """Send your static text file."""
-    file_dot_text = file_name + '.txt'
-    return app.send_static_file(file_dot_text)
-
-
 @app.after_request
 def add_header(response):
     """
@@ -111,6 +87,9 @@ def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
 
+@app.errorhandler(500)
+def internal_error(error):
+    return render_template('500.html'), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
