@@ -44,7 +44,7 @@ def about():
 
 @app.route('/who-are-we')
 def team():
-    title = "Who We Are"
+    title = "About Us"
     """Render the website's about page."""
     return render_template('who.html', title=title)
 

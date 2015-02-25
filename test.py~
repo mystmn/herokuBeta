@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+
+"""Tests for the Flask Heroku template."""
+
+class MyForm(Form):
+    name = StringField("Name", [validators.Required("Please Enter your name")])
+    email = StringField("Email", [validators.Required("Please Enter your email"), validators.Email("Emails not valid")])
+    subject = StringField("Subject", [validators.Required("Please Enter a Subject")])
+    message = TextAreaField("Message", [validators.Required("Please Enter Message")])
+
+		
