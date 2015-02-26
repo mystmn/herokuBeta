@@ -63,14 +63,14 @@ def contact():
     form = MyForm()
     title = "Contact Us"
     if request.method == 'POST':
-        if form.validate() == False:
-            return redirect(url_for('500'))
+        if not form.validate():
+            return render_template('contact.html', form=form, title=title, posted_redirect=False)
         else:
-            message = sendgrid.Mail()
+            message=sendgrid.Mail()
             message.add_to("ufr.server@gmail.com")
             message.set_from("ufr.server@gmail.com")
             message.set_subject("Sending with SendGrid is Fun")
-            mes_con = "<p>Person of Interest: %s</p><p>Email: %s</p><p>Subject: %s</p><p>Message: %s</p>" % (form.name.data, form.email.data, form.subject.data, form.message.data)
+            mes_con="<p>Person of Interest: %s</p><p>Email: %s</p><p>Subject: %s</p><p>Message: %s</p>" % (form.name.data, form.email.data, form.subject.data, form.message.data)
             message.set_html(mes_con)
             sg.send(message)
 
