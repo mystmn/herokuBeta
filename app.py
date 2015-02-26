@@ -58,7 +58,7 @@ def services():
     """Render the website's about page."""
     return render_template('services.html', title=title)
 
-@app.route('/contact', methods=('GET', 'POST'))
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
     form = MyForm()
     title = "Contact Us"
@@ -79,7 +79,7 @@ def contact():
     elif request.method == 'GET':
         return render_template('contact.html', form=form, title=title)
 
-@app.route('/successful', methods=('GET', 'POST'))
+@app.route('/successful', methods=['GET'])
 def successful():
     return render_template('successful.html', posted_redirect=True)
 
