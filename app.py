@@ -70,18 +70,23 @@ def contact():
             message.add_to("ufr.server@gmail.com")
             message.set_from("ufr.server@gmail.com")
             message.set_subject("Sending with SendGrid is Fun")
-            mes_con = "This is from : %s with an email of %s" % (form.name, form.email)
+            mes_con = "<p>Person of Interest: %s</p><p>Email: %s</p><p>Subject: %s</p><p>Message: %s</p>" % (form.name.data, form.email.data, form.subject.data, form.message.data)
             message.set_html(mes_con)
             sg.send(message)
 
-            return render_template('contact.html', form=form, title=title, posted_redirect=True)
+            return redirect(url_for('successful'))
 
     elif request.method == 'GET':
         return render_template('contact.html', form=form, title=title)
 
+@app.route('/successful', methods=('GET', 'POST'))
+def successful():
+    return render_template('successful.html', posted_redirect=True)
+
 ###
 # The functions below should be applicable to all Flask apps.
 ###
+
 @app.after_request
 def add_header(response):
     """

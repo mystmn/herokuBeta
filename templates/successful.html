@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block metaKeywords %}"computer, setup"{% endblock %}
+{% block metaDescription %}"I'm the best site ever!"{% endblock %}
+
+{% block inc_script %}
+    <link href="/static/css/default.css" rel="stylesheet" />
+    <link href="/static/css/old/test.css" rel="stylesheet" />
+{% endblock %}
+
+{% block main_content %}
+
+{% if posted_redirect == True %}
+    <h1 style="color: blue;">Thank you for your message. We'll get back to you shortly.</h1>
+    <p>...Redirecting in 5 seconds</p>
+    <meta http-equiv="refresh" content="5; /contact"/>
+{% endif%}
+
+{% endblock %}
