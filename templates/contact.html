@@ -2,6 +2,7 @@
 
 {% block metaKeywords %}"computer, setup"{% endblock %}
 {% block metaDescription %}"I'm the best site ever!"{% endblock %}
+
 {% block inc_script %}
     <link href="/static/css/default.css" rel="stylesheet" />
 
@@ -10,6 +11,7 @@
 
 {% block main_content %}
     <div class="article-title" id="headline"><b>Contact</b></div>
+
     {% if posted_redirect %}
         <h1 style="color: blue;">Thank you for your message. We'll get back to you shortly.</h1>
         <p>...Redirecting in 5 seconds</p>
@@ -33,7 +35,7 @@
             <div class="flash">{{ message }}</div>
         {% endfor %}
 
-    <form action="{{ url_for('contact') }}" method=post>
+    <form method=POST action="{{ url_for('contact') }}">
         {{ form.hidden_tag() }}
 
         {{ form.name.label }}
