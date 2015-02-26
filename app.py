@@ -64,7 +64,7 @@ def contact():
     title = "Contact Us"
     if request.method == 'POST':
         if form.validate() == False:
-            return render_template('contact.html', form=form, title=title, posted_redirect=False)
+            return redirect(url_for('500'))
         else:
             message = sendgrid.Mail()
             message.add_to("ufr.server@gmail.com")
