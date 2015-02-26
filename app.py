@@ -18,8 +18,6 @@ sg = sendgrid.SendGridClient('pcameron5', 'send.pepper62')
 
 app = Flask(__name__)
 
-app.logger.addHandler(logging.StreamHandler(sys.stdout))
-app.logger.setLevel(logging.ERROR)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'x6dgbjldprk3lm52')
 
 ''' Change to False when Environment goes to Production'''
