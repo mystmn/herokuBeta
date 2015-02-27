@@ -14,7 +14,7 @@ from wtforms import StringField, validators, TextAreaField
 
 ''' Add-On for Heroku email sending API '''
 import sendgrid
-sg = sendgrid.SendGridClient('pcameron5', 'send.pepper62')
+sg = sendgrid.SendGridClient('UserName', 'Password')
 
 app = Flask(__name__)
 
